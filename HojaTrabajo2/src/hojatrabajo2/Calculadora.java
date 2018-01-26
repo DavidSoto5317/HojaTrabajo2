@@ -12,4 +12,5 @@ package hojatrabajo2;
 public interface Calculadora {
     
     public int operar(String expresion);
+    
 }
