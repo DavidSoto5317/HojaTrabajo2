@@ -9,13 +9,7 @@ package hojatrabajo2;
  *
  * @author David y Oscar
  */
-public class HojaTrabajo2 {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
-    }
+public interface Calculadora {
     
+    public int operar(String expresion);
 }
