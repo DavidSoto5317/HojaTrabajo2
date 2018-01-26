@@ -7,7 +7,6 @@ package hojatrabajo2;
 
 
 import java.util.Scanner;
-import java.io.*;
 
 /**
  *
@@ -15,20 +14,10 @@ import java.io.*;
  */
 public class HojaTrabajo2 {   
     
-    Calculadora calcu = new nuestraCalculadora();
+    calculadora calcu = new nuestraCalculadora();
     
     public static void main(String[] args) {
-        
-//        //Se abre el archivo y se crea el BufferReader para poder leerlo.
-//        File archivo = null;
-//        FileReader fr = null;
-//        BufferedReader br = null;
-//        
-//        //Se lee el archivo
-//        
-//        String linea;
-//        while((linea=br.readLine())!=null)
-//        System.out.println(linea);
+       
         
         boolean power = true;  
         Scanner teclado = new Scanner(System.in);

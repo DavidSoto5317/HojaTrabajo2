@@ -9,8 +9,8 @@ package hojatrabajo2;
  *
  * @author David y Oscar
  */
-public interface Calculadora {
+public interface calculadora {
     
-    public int operar(String expresion);
+    public double operar(String expresion);
     
 }
