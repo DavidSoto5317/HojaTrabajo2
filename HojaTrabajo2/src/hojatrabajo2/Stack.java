@@ -1,3 +1,5 @@
+package hojatrabajo2;
+
 public interface Stack<E> 
 {
 

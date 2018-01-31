@@ -10,44 +10,91 @@ import java.io.*;
  *
  * @author Usuario
  */
-public class nuestraCalculadora implements calculadora{
+public class nuestraCalculadora implements calculadora {
     
-    Stack<Double> miStack = new StackArrayList<Double>();
+    Stack<Double> miStack = new StackArrayList<Double>();  
+    
+    double total;        
+    private double valor1=0, valor2=0;
+    double resultado;
 
     @Override
-    public double operar(String expresion) {
-     
-        //Se abre el archivo y se crea el BufferReader para poder leerlo.
-        File archivo = null;
-        FileReader fr = null;
-        BufferedReader br = null;
+    public double operar(String expresion) {                                            
         
-        //Se lee el archivo
-        
-        String linea = "5 4 + 9 - 7 * 3 - 2 + 7 + 5 / 4 + 3 * 6 + 8 + ";                
-        
-        double numero;
-        String caracter;
-        
-//        while((linea=br.readLine())!=null)
-//        System.out.println(linea);
-        
-        for (int i = 0; i < archivo.length(); i++) {
-        
-            char aChar = linea.charAt(i);
+        for (int i = 0; i < expresion.length(); i++) {
             
+            char character = expresion.charAt(i);                       
             
-        }
+            //Condicion cuando el valor sea una letra
+            if (Character.isLetter(character)){
+                
+                System.out.println("ERROR, LA LINEA TIENE UN CARACTER: " + character);
+                
+            //Condicion cuando el valor sea un operando
+            } else if (Character.isDigit(character)) {
+                
+                if (miStack.size()==0) {
+                    
+                    valor1 = (double) Character.digit(character, 10);                    
+                    miStack.push(valor1);
+                    
+                } else if (miStack.size()==1){
+                    
+                    valor2 = (double) Character.digit(character, 10);                    
+                    miStack.push(valor2);
+                                        
+                }    
+                
+            //Condicion cuando el valor sea el simbolo de suma.
+            } else if (String.valueOf(character).matches("[+]")) {
+                
+                total = suma();
+                
+            } else if (String.valueOf(character).matches("[*]")) {
+               
+                total = multiplicacion();
+                
+            }  
+        }                        
      
-        return 0;
+        return total;
         
     }
     
-    
-    
+    /**
+     * Metodo que suma dos valores dentro del stack
+     * @return 
+     */
     private double suma(){
         
-        return 10;
+        double numero1 = miStack.pop();
+        //System.out.println("le hice pop al primer valor, y es: " + valor1);
+        double numero2 = miStack.pop();
+        //System.out.println("El segundo valor es de: " + valor2);
+        
+        resultado = numero1 + numero2;
+        
+        miStack.push(resultado);
+        
+        return resultado;
+        
+    }
+    
+    /**
+     * Metodo que multiplica dos valores del stack
+     * @return 
+     */
+    private double multiplicacion(){
+        
+        double numero1 = miStack.pop();
+        
+        double numero2 = miStack.pop();        
+        
+        resultado = numero1 * numero2;
+        
+        miStack.push(resultado);
+        
+        return resultado;        
         
     }
     
