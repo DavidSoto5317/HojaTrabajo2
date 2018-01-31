@@ -20,7 +20,7 @@ public class HojaTrabajo2 {
         calculadora calcu = new nuestraCalculadora();
         
         //Se abre el archivo y se crea el BufferReader para poder leerlo.
-        File archivo = new File("C:\\Users\\Usuario\\Documents\\NetBeansProjects\\HojaTrabajo2\\HojaTrabajo2\\src\\hojatrabajo2\\cadena.txt");
+        File archivo = new File("C:\\Users\\uriel\\Desktop\\Netbeans\\HojaTrabajo2\\HojaTrabajo2\\src\\hojatrabajo2\\cadena.txt");
         FileReader fr = new FileReader (archivo);
         BufferedReader br = new BufferedReader (fr);
         

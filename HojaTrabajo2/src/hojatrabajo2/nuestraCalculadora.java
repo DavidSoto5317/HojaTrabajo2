@@ -54,7 +54,15 @@ public class nuestraCalculadora implements calculadora {
                
                 total = multiplicacion();
                 
-            }  
+            } else if(String.valueOf(character).matches("[-]")){
+                
+                total = resta();
+                
+            } else if(String.valueOf(character).matches("[/]")){
+        
+                total = division();    
+                
+            }
         }                        
      
         return total;
@@ -63,7 +71,7 @@ public class nuestraCalculadora implements calculadora {
     
     /**
      * Metodo que suma dos valores dentro del stack
-     * @return 
+     * @return El resultado de la operacion
      */
     private double suma(){
         
@@ -81,8 +89,27 @@ public class nuestraCalculadora implements calculadora {
     }
     
     /**
+     * Metodo que resta dos valores dentro del stack
+     * @return El resultado de la operacion
+     */
+    private double resta(){
+        
+        double numero1 = miStack.pop();
+        //System.out.println("le hice pop al primer valor, y es: " + valor1);
+        double numero2 = miStack.pop();
+        //System.out.println("El segundo valor es de: " + valor2);
+        
+        resultado = numero2 - numero1;
+        
+        miStack.push(resultado);
+        
+        return resultado;
+        
+    }
+    
+    /**
      * Metodo que multiplica dos valores del stack
-     * @return 
+     * @return El resultado de la operacion
      */
     private double multiplicacion(){
         
@@ -91,6 +118,24 @@ public class nuestraCalculadora implements calculadora {
         double numero2 = miStack.pop();        
         
         resultado = numero1 * numero2;
+        
+        miStack.push(resultado);
+        
+        return resultado;        
+        
+    }
+    
+    /**
+     * Metodo que divide dos valores del stack
+     * @return El resultado de la operacion
+     */
+    private double division(){
+        
+        double numero1 = miStack.pop();
+        
+        double numero2 = miStack.pop();        
+        
+        resultado = numero2 / numero1;
         
         miStack.push(resultado);
         
