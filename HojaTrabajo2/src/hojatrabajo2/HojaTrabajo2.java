@@ -8,6 +8,8 @@ package hojatrabajo2;
 
 import java.io.*;
 import java.util.Scanner;
+import static java.lang.Double.isNaN;
+import static java.lang.Double.isFinite;
 
 /**
  *
@@ -42,8 +44,11 @@ public class HojaTrabajo2 {
             if (decision==1){
                 
                 double hola = calcu.operar(linea);
-                
-                System.out.println("El total es de: "+ hola);
+                if(isNaN(hola) || (isFinite(hola) == false)){
+                    System.out.println("No es posible realizar la operacion");
+                }else{
+                    System.out.println("El total es de: "+ hola);
+                }
                 
             }
  
