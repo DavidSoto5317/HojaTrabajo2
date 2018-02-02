@@ -1,14 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * Interfaz que cumple con el objetivo de conectar con otros programas.
+ * @author: Oscar Juarez - 17315 / David Soto - 17551
+ * @version: 2/02/18
+ * Algoritmos y Estructura de Datos - seccion: 10
  */
 package hojatrabajo2;
 
-/**
- *
- * @author David y Oscar
- */
 public interface calculadora {
     
     public double operar(String expresion);

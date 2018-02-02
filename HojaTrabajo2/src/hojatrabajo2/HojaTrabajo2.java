@@ -1,7 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * Clase principal que se comunica con el usuario.
+ * @author: Oscar Juarez - 17315 / David Soto - 17551
+ * @version: 2/02/18
+ * Algoritmos y Estructura de Datos - seccion: 10
  */
 package hojatrabajo2;
 
@@ -19,18 +20,23 @@ public class HojaTrabajo2 {
     
     public static void main(String[] args) throws FileNotFoundException, IOException {
         
+        String linea;
+        
         calculadora calcu = new nuestraCalculadora();
         
-        //Se abre el archivo y se crea el BufferReader para poder leerlo.
-        File archivo = new File("C:\\Users\\uriel\\Desktop\\Netbeans\\HojaTrabajo2\\HojaTrabajo2\\src\\hojatrabajo2\\cadena.txt");
-        FileReader fr = new FileReader (archivo);
-        BufferedReader br = new BufferedReader (fr);
+        //Direccion Oscar: C:\Users\Usuario\Documents\NetBeansProjects\HojaTrabajo2\HojaTrabajo2\src\hojatrabajo2\cadena.txt
+        //Direccion Chino: C:\Users\User\Desktop\Netbeans\HojaTrabajo2\HojaTrabajo2\src\hojatrabajo2\cadena.txt
         
+        //Se abre el archivo y se crea el BufferReader para poder leerlo.
+        File archivo = new File("C:\\Users\\Usuario\\Documents\\NetBeansProjects\\HojaTrabajo2\\HojaTrabajo2\\src\\hojatrabajo2\\cadena.txt");
+        FileReader fr = new FileReader (archivo);
+        BufferedReader br = new BufferedReader (fr);        
+                       
         boolean power = true;  
         Scanner teclado = new Scanner(System.in);
-        int decision;
-        
-        String linea = br.readLine();
+        int decision;   
+        double resultado = 0;
+                        
                         
         while (power){
             System.out.println("____________________________________");
@@ -43,18 +49,24 @@ public class HojaTrabajo2 {
             
             if (decision==1){
                 
-                double hola = calcu.operar(linea);
-                if(isNaN(hola) || (isFinite(hola) == false)){
-                    System.out.println("No es posible realizar la operacion");
-                }else{
-                    System.out.println("El total es de: "+ hola);
+                while((linea = br.readLine()) != null) {
+                resultado = calcu.operar(linea);
+                }
+
+            System.out.println("El total es de: " + resultado + "\n");
+                
+            } else if (decision==2) {
+                
+                System.out.println("Saliendo del programa...");
+                power = false;
+                
+                //Se cierra el fichero.
+                if (null != fr){
+                   fr.close();
                 }
                 
             }
- 
         }
-        
-        
     }
     
 }
