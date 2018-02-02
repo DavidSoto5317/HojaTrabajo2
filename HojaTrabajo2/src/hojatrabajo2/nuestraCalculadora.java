@@ -16,7 +16,7 @@ public class nuestraCalculadora implements calculadora {
     Stack<Double> miStack = new StackArrayList<Double>();  
     
     double total;        
-    private double valor1=0, valor2=0;
+    private double valor1=0;
     double resultado;
 
     /**
@@ -40,35 +40,22 @@ public class nuestraCalculadora implements calculadora {
             //Condicion cuando el valor sea un operando
             } else if (Character.isDigit(character)) {
                 
-                if (miStack.empty()) {
-                    
-                    valor1 = (double) Character.digit(character, 10);                    
-                    miStack.push(valor1);
-                    
-                } else if (miStack.size()==1){
-                    
-                    valor2 = (double) Character.digit(character, 10);                    
-                    miStack.push(valor2);
-                                        
-                } else if (miStack.size()>1){
-                    
-                    System.err.println("ERROR, SE HA INGRESADO UN TERCER NUMERO / AUSENCIA DE UN OPERANDO\n");
-                    total=0;
-                    break;
-                }
+                valor1 = (double) Character.digit(character, 10);                    
+                miStack.push(valor1);
+                                       
                 
             //Condicion cuando el valor sea el simbolo de suma.
-            } else if (String.valueOf(character).matches("[+]") && miStack.size()==2) {
+            } else if (String.valueOf(character).matches("[+]")) {
                 
                 total = suma();
             
             //Condicion cuando el valor sea el simbolo de multiplicacion.
-            } else if (String.valueOf(character).matches("[*]") && miStack.size()==2) {
+            } else if (String.valueOf(character).matches("[*]")) {
                
                 total = multiplicacion();
             
             //Condicion cuando el valor sea el simbolo de resta.
-            } else if(String.valueOf(character).matches("[-]") && miStack.size()==2){
+            } else if(String.valueOf(character).matches("[-]")){
                 
                 total = resta();
                         

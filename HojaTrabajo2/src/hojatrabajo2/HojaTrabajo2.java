@@ -20,8 +20,7 @@ public class HojaTrabajo2 {
     
     public static void main(String[] args) throws FileNotFoundException, IOException {
         
-        String linea;
-        
+        String linea;        
         calculadora calcu = new nuestraCalculadora();
         
         //Direccion Oscar: C:\Users\Usuario\Documents\NetBeansProjects\HojaTrabajo2\HojaTrabajo2\src\hojatrabajo2\cadena.txt
