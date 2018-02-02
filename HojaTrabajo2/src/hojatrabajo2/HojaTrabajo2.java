@@ -12,21 +12,16 @@ import java.util.Scanner;
 import static java.lang.Double.isNaN;
 import static java.lang.Double.isFinite;
 
-/**
- *
- * @author David y Oscar
- */
 public class HojaTrabajo2 {           
     
     public static void main(String[] args) throws FileNotFoundException, IOException {
         
         String linea;        
         calculadora calcu = new nuestraCalculadora();
+                
         
-        //Direccion Oscar: C:\Users\Usuario\Documents\NetBeansProjects\HojaTrabajo2\HojaTrabajo2\src\hojatrabajo2\cadena.txt
-        //Direccion Chino: C:\Users\User\Desktop\Netbeans\HojaTrabajo2\HojaTrabajo2\src\hojatrabajo2\cadena.txt
-        
-        //Se abre el archivo y se crea el BufferReader para poder leerlo.
+        //Se abre el archivo y se crea el BufferReader para poder leerlo. Cambiar la direccion en caso
+        //que se quiera abrir un archivo diferente al seleccionado
         File archivo = new File("C:\\Users\\Usuario\\Documents\\NetBeansProjects\\HojaTrabajo2\\HojaTrabajo2\\src\\hojatrabajo2\\cadena.txt");
         FileReader fr = new FileReader (archivo);
         BufferedReader br = new BufferedReader (fr);        

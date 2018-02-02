@@ -7,10 +7,6 @@
 package hojatrabajo2;
 import java.io.*;
 
-/**
- *
- * @author Usuario
- */
 public class nuestraCalculadora implements calculadora {
     
     Stack<Double> miStack = new StackArrayList<Double>();  
