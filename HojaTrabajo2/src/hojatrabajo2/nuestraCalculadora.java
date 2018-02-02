@@ -65,10 +65,14 @@ public class nuestraCalculadora implements calculadora {
                 
                 total = 0;
                 System.err.println("ERROR, NO SE PUEDE DIVIDIR ENTRE 0\n");
-                break;
-                
+                break;                
             }
-        }                        
+        }    
+        
+        if (miStack.size()>1){
+            System.err.println("ERROR, FALTA UN OPERANDO");
+            total = 0;
+        }
      
         return total;
         
